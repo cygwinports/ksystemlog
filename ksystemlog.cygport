@@ -1,0 +1,10 @@
+inherit kde4
+
+NAME="ksystemlog"
+VERSION=4.11.5
+RELEASE=1
+CATEGORY="Admin"
+SUMMARY="KDE log viewer"
+DESCRIPTION="KDE system administration suite"
+
+PATCH_URI="4.4.2-ksystemlog-as-needed.patch"
