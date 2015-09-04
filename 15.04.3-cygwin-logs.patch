@@ -1,0 +1,11 @@
+--- origsrc/ksystemlog-15.04.3/src/modes/xorg/xorgConfiguration.h	2014-08-12 23:38:07.000000000 -0500
++++ src/ksystemlog-15.04.3/src/modes/xorg/xorgConfiguration.h	2015-09-04 15:57:13.835837000 -0500
+@@ -48,7 +48,7 @@ class XorgConfiguration : public LogMode
+ 			configuration->setCurrentGroup(QLatin1String( "XorgLogMode" ));
+ 
+ 			QStringList defaultXorgPaths;
+-			defaultXorgPaths << QLatin1String( "/var/log/Xorg.0.log" );
++			defaultXorgPaths << QLatin1String( "/var/log/xwin/XWin.0.log" );
+ 			configuration->addItemStringList(QLatin1String( "LogFilesPaths" ), d->xorgPaths, defaultXorgPaths, QLatin1String( "LogFilesPaths" ));
+ 
+ 		}
