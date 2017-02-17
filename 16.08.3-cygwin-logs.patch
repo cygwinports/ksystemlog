@@ -1,0 +1,50 @@
+--- origsrc/ksystemlog-16.08.3/src/modes/apache/apacheConfiguration.h	2016-11-06 17:25:26.000000000 -0600
++++ src/ksystemlog-16.08.3/src/modes/apache/apacheConfiguration.h	2016-11-14 01:57:12.272470200 -0600
+@@ -52,12 +52,12 @@ public:
+         configuration->setCurrentGroup(QStringLiteral("ApacheLogMode"));
+ 
+         QStringList defaultApachePaths;
+-        defaultApachePaths << QStringLiteral("/var/log/apache2/error.log");
++        defaultApachePaths << QStringLiteral("/var/log/httpd/error_log");
+         configuration->addItemStringList(QStringLiteral("ApacheLogFilesPaths"), d->apachePaths,
+                                          defaultApachePaths, QStringLiteral("ApacheLogFilesPaths"));
+ 
+         QStringList defaultApacheAccessPaths;
+-        defaultApacheAccessPaths << QStringLiteral("/var/log/apache2/access.log");
++        defaultApacheAccessPaths << QStringLiteral("/var/log/httpd/access_log");
+         configuration->addItemStringList(QStringLiteral("ApacheAccessLogFilesPaths"), d->apacheAccessPaths,
+                                          defaultApacheAccessPaths,
+                                          QStringLiteral("ApacheAccessLogFilesPaths"));
+--- origsrc/ksystemlog-16.08.3/src/modes/cron/cronConfiguration.h	2016-11-06 17:25:26.000000000 -0600
++++ src/ksystemlog-16.08.3/src/modes/cron/cronConfiguration.h	2016-11-14 01:57:35.152865800 -0600
+@@ -52,7 +52,7 @@ public:
+         configuration->setCurrentGroup(QStringLiteral("CronLogMode"));
+ 
+         QStringList defaultCronPaths;
+-        defaultCronPaths << QStringLiteral("/var/log/syslog");
++        defaultCronPaths << QStringLiteral("/var/log/messages");
+         configuration->addItemStringList(QStringLiteral("LogFilesPaths"), d->cronPaths, defaultCronPaths,
+                                          QStringLiteral("LogFilesPaths"));
+ 
+--- origsrc/ksystemlog-16.08.3/src/modes/system/systemConfiguration.h	2016-11-06 17:25:26.000000000 -0600
++++ src/ksystemlog-16.08.3/src/modes/system/systemConfiguration.h	2016-11-14 01:58:11.988418900 -0600
+@@ -38,7 +38,7 @@ class SystemConfiguration : public Gener
+ public:
+     SystemConfiguration()
+         : GenericLogModeConfiguration(QStringLiteral(SYSTEM_LOG_MODE_ID),
+-                                      QStringList() << QStringLiteral("/var/log/syslog"),
++                                      QStringList() << QStringLiteral("/var/log/messages"),
+                                       QList<int>() << Globals::INFORMATION_LOG_LEVEL_ID)
+     {
+         /*
+--- origsrc/ksystemlog-16.08.3/src/modes/xorg/xorgConfiguration.h	2016-11-06 17:25:26.000000000 -0600
++++ src/ksystemlog-16.08.3/src/modes/xorg/xorgConfiguration.h	2016-11-14 01:58:32.681182000 -0600
+@@ -49,7 +49,7 @@ public:
+         configuration->setCurrentGroup(QStringLiteral("XorgLogMode"));
+ 
+         QStringList defaultXorgPaths;
+-        defaultXorgPaths << QStringLiteral("/var/log/Xorg.0.log");
++        defaultXorgPaths << QStringLiteral("/var/log/xwin/XWin.0.log");
+         configuration->addItemStringList(QStringLiteral("LogFilesPaths"), d->xorgPaths, defaultXorgPaths,
+                                          QStringLiteral("LogFilesPaths"));
+     }

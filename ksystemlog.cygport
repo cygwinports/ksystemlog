@@ -1,14 +1,12 @@
-inherit kde4
+inherit kf5
 
 NAME="ksystemlog"
-VERSION=15.04.3
+VERSION=16.08.3
 RELEASE=1
 CATEGORY="Admin"
 SUMMARY="KDE log viewer"
 DESCRIPTION="KDE system administration suite"
 
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/ksystemlog.git/plain/kdeadmin-4.8.4-syslog.patch
-	4.4.2-ksystemlog-as-needed.patch
-	15.04.3-cygwin-logs.patch
+	16.08.3-cygwin-logs.patch
 "
